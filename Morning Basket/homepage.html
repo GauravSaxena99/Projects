@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morning Basket</title>
+    
+    <style>
+        *{
+            font-family: Arial;
+            margin: 0px;
+            padding: 0px;
+        }
+        ul{
+            list-style: none;
+        
+        }
+        a{
+            text-decoration: solid;
+        }
+        body{
+            margin: 0px;
+            padding: 0px;
+            font-family: Arial;
+        }
+        .navigation{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 35px;
+            max-width: 1070px;
+            width: 100%;
+            margin: auto;
+        }
+        .menu{
+            display: flex;
+
+        }
+        .menu li a {
+            padding: 3px 10px;
+            margin: 0px 3px;
+            color: darkgray;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: all ease 0.3s;
+
+        }
+        .logo{
+            font-size: 1.4rem;
+            font-weight: 600;
+            letter-spacing: 5px;
+            color: darkgrey;
+        }
+        .logo span{
+            color:black;
+        }
+        .right-nav{
+            display: grid;
+            grid-template-columns: auto;
+            grid-gap: 25px;
+
+
+        }
+
+        .like{
+            
+            color: #000000;
+        }
+        .cart{
+            background: "cart.jpg";
+            
+            color: #000000;
+            
+        }
+        .right-nav a span {
+            position: absolute;
+            top: -7px;
+            right: -7px;
+            width: 20;
+            height: 20 ;
+            display:flex ;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            color: #b4b4b4;
+            font-size: 0.6rem;
+            font-weight: 500;
+            background-color: black;
+
+
+        }
+        .menu li a:hover,
+        .menu .active {
+            color: rgb(0, 0, 0);
+            transition: all ease 0.3s;
+
+        }
+        #search-banner{
+            max-width: 1250px;
+            height: 500px;
+            border-radius: 30;
+            background-color: #fff0ee;
+            margin: 10px auto;
+            position: relative;
+            overflow: hidden;
+            background-image: url(bg.png);
+            background-repeat: no-repeat;
+            background-size: 1000px;
+            background-position: bottom right;
+            padding: 20px;
+            display: flex;
+            
+        
+
+        }
+
+        .bg1{
+            position: absolute;
+            left: -50px;
+            top: -150;
+            width: 300px;
+            height: 300px;
+            object-fit: contain;
+            object-position: center;
+
+        }
+        .bg2{
+            position: absolute;
+            left: 60%;
+            transform: translateX(-60%);
+            top: -75px;
+            width: 150px;
+            height: 150px;
+            object-position: center;
+
+        }
+        .search-banner-text{
+
+            display: flex;
+            flex-direction: column;
+            width: 500px;
+            margin-left:70px ;
+            position: relative;
+        }
+        .search-banner-text h1{
+
+            font-size: 3rem;
+            line-height: 55px;
+            color:grey ;
+        }
+        .search-banner-text strong{
+            color: black;
+            font-size: 1.3rem;
+            margin-top: 4px;
+        }
+        .searchbox{
+            background-color: #ffffff;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            margin-top: 25px;
+            padding: 0px 5px 0px 20px;
+            border-radius: 30px;
+
+        }
+        .searchbox i{
+            font-size: 1.3rem;
+            color: black;
+            margin: 0px 10px;
+
+        }
+        .searchbox .searchinput{
+            height: 40px;
+            border: none;
+            width: 100%;
+            padding: 0px 10px;
+            outline: none;
+        }
+        .searchbox .searchbtn{
+            width: 220px;
+            height: 20px;
+            border-radius: 30px;
+            background-color: rgb(163, 163, 163);
+            border: none;
+            color: #000000;
+            outline: none;
+            cursor: pointer;
+            transition: all ease 0.3s;
+        }
+        .searchbox .searchbtn:hover{
+            background-color: #ffffff;
+            transition: all ease 0.3s;
+        }
+        #category,
+        #Popular-product,
+        #popular-bundle-pack,
+        #partner{
+            display: flex;
+            flex-direction: column;
+            max-width: 1000px;
+            margin: 20px auto;
+
+        }
+      
+       .category-heading,
+       .product-heading,
+       .partner-heading{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+       }
+       .category-heading h2,
+       .product-heading h3, 
+       .partner-heading h3{
+        font-size: 1.56rem;
+        font-weight: 700;
+        color: #000000;
+        letter-spacing: 0.5px;
+       }
+
+       
+       .category-heading span,
+       .product-heading span{
+        color: #000000;
+        font-weight: 100;
+        letter-spacing: 1px;
+       }
+       .category-container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 30px;
+       }
+       .category-box{
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         justify-content: center;
+         background-color: #b4b4b4;
+         border-radius: 10px;
+         min-height: 130px;
+         width: 120px;
+         border: 1px solid rgba(0,0,0,0);
+       }
+       .category-box img{
+        height: 35px;
+        width: 50px;
+        object-fit: contain;
+        object-position: center;
+        transition: all ease 0.1s;
+           }
+           .category-box span{
+            color: #000000;
+            font-size: 0.8rem;
+            margin-top: 20px;
+            letter-spacing: 0.3px;
+            font-weight: 600;
+           }
+
+           .category-box:hover img{
+            transform: scale(1.1);
+            transition: all ease 0.1s;
+           }
+           #popular-products{
+            margin: 80px auto;
+           }
+           .product-container{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-gap: 30px;
+            margin: 40px 0px;
+
+           }
+           .product-box{
+            width: 100%;
+            border: 1px solid rgba(255, 255, 255, 0.933);
+            background-color: #ffffff;
+            padding: 20px;
+            border: none;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+
+            }
+            .product-box img{
+                width: 90%;
+                height: 180px;
+                object-fit: contain;
+                object-position: center;
+                margin: auto;
+               
+            }
+            .product-box strong{
+                color: #1d1d1d;
+                font-size: 1.1rem;
+                letter-spacing: 1px;
+                font-weight: 600;
+                margin-top: 10px;
+            }
+           .product-box .quantity{
+            color: #161616;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            
+           }
+           .product-box .price{
+            margin-top: 10px;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #393939;
+           }
+           .product-box .cart-btn{
+            width: 100%;
+            height: 40px;
+            background-color: #b4b4b4;
+            color: #000000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            transition: all ease 0.3s;
+
+           }
+           .product-box .cart-btn:hover{
+            background-color: #393939;
+            color: #000000;
+            transition: all ease 0.3s;
+
+           }
+           #popular-bundle-pack{
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            max-width: 1150px;
+            margin: 50px auto;
+            padding: 60px 0px 20px 0px;
+            border-radius: 20px;
+            background-color: #c7c0c0;
+            border: 1px solid #f3f3f3;
+            align-items: center;
+           }
+           .product-container,
+           .product-heading{
+            max-width: 1000px;
+            width: 100%;
+           }
+           #partner{
+            margin: 100px auto;
+           }
+           .logo-container{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            
+           }
+           .logo-container img{
+            height: 55px;
+            object-fit: contain;
+            object-position: center;
+            filter: grayscale(1);
+            opacity: 1;
+            transform: all ease 0.3s;
+            
+           }
+           .logo-container img:hover{
+            filter: grayscale(0);
+            transform: all ease 0.3s;
+
+           }
+           #download-app{
+            max-width: 1150px;
+            width: 100%;
+            background-color: #bebebe;
+            height: 400px;
+            margin: 225px auto;
+            border-radius: 20px;
+            padding: 20px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            align-self: center;
+        
+           }
+           .app-img{
+            width: 275px;
+            height: 500px;
+            background-color: #bebebe;
+            border: 4px solid #000000;
+            border-radius: 20px;
+            overflow: hidden;
+           }
+           .app-img img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+           }
+           .download-app-text{
+            max-width: 400px;
+
+           }
+           .download-app-text strong{
+            color: #000000;
+            font-size: 1.3rem;
+           }
+           .download-app-text p{
+            color: #161616;
+            margin: 15px 0px;
+           }
+           .download-btn{
+            display: flex;
+
+           }
+           .download-btn a{
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+           }
+           .download-btn a img{
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            margin-right: 10px;
+            border-radius: 10px;
+            overflow: hidden;
+         }
+         footer{
+            background-color: #ffffff;
+            padding: 50px 20px;
+            border-top: 5px solid;
+
+    
+         }
+         .footer-container{
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+         }
+         .footer-logo a{
+            color: #000000;
+            font-size: 1.4rem;
+            font-weight: 600;
+            letter-spacing: 5px;
+         }
+         .footer-logo a span{
+            font-size: 1.4rem;
+            font-weight: 600;
+            letter-spacing: 5px;
+            color: rgb(166, 166, 166);
+         }
+         .footer-links strong{
+            color: #000000;
+            font-size: 1.4rem;
+            font-weight: 600;
+
+         }
+        .footer-links ul{
+           margin-top: 10px;
+
+        }
+        .footer-links ul li a{
+            color: #000000;
+            opacity: 0.5;
+            margin: 4px 0px;
+            font-size: 0.9rem;
+            letter-spacing: 1.5px;
+        }
+         
+         
+
+    </style>
+    </head>
+<body>
+
+    <nav class="navigation">
+        
+        <a href="#" class="logo"> <span>Morning</span> Basket</a>
+        <ul class="menu">
+            <li><a href="#"class="active"> Home</a></li>
+            <li><a href="#category">Categories</a></li>
+            <li><a href="#popular-bundle-pack">Our packages </a></li>
+            <li><a href="#download-appl">Our App</a></li>
+        </ul>
+
+        <div class="right-nav"></div>
+        <a href="#" class="like">
+            <p>&hearts;<p> 
+                
+                      
+        </a>
+        <a href="cart.html" class="cart" > <strong>Cart</strong></a> 
+        
+
+    </nav>
+    <section id="search-banner">
+        <img src="bg-1.png" class="bg1" alt="bg-1"> 
+        <img src="bg-2.png" class="bg2" alt="bg-2"> 
+
+        <div class="search-banner-text">
+            <h1>Order your Daily Groceries</h1>
+            <strong>#free Delivery</strong>
+       
+        <form action="" class="searchbox" >
+        <input type="text" class="searchinput" placeholder="Search Your Daily Groceries" name="search" required>
+        <input type="submit" class="searchbtn" value="search">
+        
+    </form>
+    </div>
+    </section>
+    <section id="category">
+        <div class="category-heading">
+
+        
+        <h2>Categories</h2>
+        <span>All</span>
+        </div>
+        <div class="category-container" >
+            <a href="categories/Categories.html" class="category-box">
+                <img src="fish.png" alt="fish">
+                <span>fish & meat</span> 
+            </a>
+            <a href="categories/Categories.html" class="category-box">
+                <img src="Vegetables.png" alt="vegetable">
+                <span>Vegetables</span> 
+            </a>
+            <a href="categories/Categories.html" class="category-box">
+                <img src="breads1.png" alt="breads">
+                <span>Breads</span> 
+            </a>
+            <a href="categories/Categories.html" class="category-box">
+                <img src="milk.png" alt="Milk">
+                <span>Milk</span> 
+            </a>
+            <a href="categories/Categories.html" class="category-box">
+                <img src="Snack.png" alt="snacks">
+                <span>snacks</span> 
+            </a>
+            <a href="categories/Categories.html" class="category-box">
+                <img src="Beverages.png" alt="Beverages">
+                <span>Beverages</span> 
+            </a>
+            <a href="categories/Categories.html" class="category-box">
+                <img src="grocery.png" alt="Dailystaples">
+                <span>Daily staples</span> 
+            </a>
+        </div>
+        <section id="popular-products">
+            <div class="product-heading">
+                <h3>Popular Products</h3>
+                <span>All</span>
+            </div>
+            
+            <div class="product-container" >
+            
+            <div class="product-box">
+                <img src="apples.png" alt="apple">
+                <strong>Apple</strong>
+                <span class="quantity" >1 KG</span>
+                <span class="price">220 RS</span>
+                <a href="#" class="cart-btn">
+                    Add to Cart
+                </a>
+             </div>
+             <div class="product-box">
+                <img src="amul-butter.png" alt="amul-butter">
+                <strong>Amul Bread</strong>
+                <span class="quantity" >1 PC</span>
+                <span class="price">40 RS</span>
+                <a href="#" class="cart-btn">
+                    Add to Cart
+                </a>
+             </div>
+             <div class="product-box">
+                <img src="Dahi.png" alt="curd">
+                <strong>Amul Masti Curd</strong>
+                <span class="quantity" >400 gm</span>
+                <span class="price">28 RS</span>
+                <a href="#" class="cart-btn">
+                    Add to Cart
+                </a>
+             </div>
+             <div class="product-box">
+                <img src="Real Mixed Fruit.jpg" alt="real-mixed-fruit">
+                <strong>Real Mixed Fruit</strong>
+                <span class="quantity" >1 Pc</span>
+                <span class="price">120 RS</span>
+                <a href="#" class="cart-btn">
+                    Add to Cart
+                </a>
+             </div>
+             <div class="product-box">
+                <img src="UNIBIC.jpg" alt="UNIBIC">
+                <strong>Unibic Fruit & Nut cookies</strong>
+                <span class="quantity" >Pack of 4 </span>
+                <span class="price">106.08 RS</span>
+                <a href="#" class="cart-btn">
+                    Add to Cart
+                </a>
+             </div>
+             <div class="product-box">
+                <img src="eggs.png" alt="egg">
+                <strong>Apple</strong>
+                <span class="quantity" >6 pc Carton</span>
+                <span class="price">84 RS</span>
+                <a href="#" class="cart-btn">
+                    Add to Cart
+                </a>
+             </div>
+             
+            </div>
+           
+
+        </section>
+    </section>
+    <section id="popular-bundle-pack">
+        <div class="product-heading">
+            <h3>Popular Bundle Packs</h3>
+        </div>
+        <div class="product-container" >
+            
+            <div class="product-box">
+                <img src="canola oil.png" alt="canola">
+                <strong>Vedaka Canola oil</strong>
+                <span class="quantity" >5 LTR</span>
+                <span class="price">1395 RS</span>
+                <a href="#" class="cart-btn">
+                    Add to Cart
+                </a>
+             </div>
+             <div class="product-box">
+                <img src="ashirvad-atta.png" alt="ashirvad-atta">
+                <strong>Ashirvad Select premium Sharbati Atta</strong>
+                <span class="quantity" >10 KG</span>
+                <span class="price">610 RS</span>
+                <a href="#" class="cart-btn">
+                    Add to Cart
+                </a>
+             </div>
+             <div class="product-box">
+                <img src="eggscrate.png" alt="eggs crate">
+                <strong>Eggs crate</strong>
+                <span class="quantity" >30 pc</span>
+                <span class="price">220 RS</span>
+                <a href="#" class="cart-btn">
+                    Add to Cart
+                </a>
+             </div>
+             <div class="product-box">
+                <img src="chili.png"real-mixed-fruit">
+                <strong>Red Chillies</strong>
+                <span class="quantity" >10 Kg</span>
+                <span class="price">720 RS</span>
+                <a href="#" class="cart-btn">
+                    Add to Cart
+                </a>
+             </div>
+             <div class="product-box">
+                <img src="pack1.png" alt="pack1">
+                <strong>olive oil , Brocoli , Milk , Eggs +6 more</strong>
+                <span class="quantity" >10 items 1kg/ltr </span>
+                <span class="price">2200 RS</span>
+                <a href="#" class="cart-btn">
+                    Add to Cart
+                </a>
+             </div>
+             <div class="product-box">
+                <img src="pack2.jpg" alt="pack2">
+                <strong>Orange , Beetroot , orange , tomato +6 more  </strong>
+                <span class="quantity" >1 kg(each)</span>
+                <span class="price">2599 RS</span>
+                <a href="#" class="cart-btn">
+                    Add to Cart
+                </a>
+             </div>
+             
+            </div>
+        
+    </section>
+    <section id="partner" >
+        <div class="partner-heading">
+            <h3>Our Trusted Partners</h3>
+        </div>
+        <div class="logo-container">
+            <img src="amazon.png" alt="logo-1">
+            <img src="bigbasket-logo.png" alt="logo-2">
+            <img src="zomato.png" alt="logo-3">
+            <img src="logo-4.png" alt="logo-4">
+            
+
+        </div>
+    </section>
+    <section id="download-app" >
+        <div class="app-img">
+            <img src="mobile-app.png" alt="app">
+             
+
+        </div>
+        <div class="download-app-text">
+            <strong>Download App</strong>
+            <p1>download our app to get full access and get all the good deals. also the new users will get 50% discount on their first order</p1>
+
+        </div>
+        <div class="download-btn">
+            <a href="#">
+                <img src="appstore-btn.png" alt="appstr">
+                <img src="googleplay-btn.png" alt="googleplay-btn">
+            </a>
+        </div>
+    </section>
+<footer>
+    <div class="footer-container">
+        <div class="footer-logo">
+            <a href="#">Morning <span>Basket</span> </a>
+            
+        </div>
+<div class="footer-links">
+    <strong>
+        Help
+    </strong>
+    <ul>
+        <li><a href="About Us.html" >About us </a></li>
+        <li>  <a href="FAQs.html" >FAQs</a></li>
+        <li>  <a href="Privacy Policy.html" >Privacy Policy</a></li>
+        <li><a href="Terms and Conditions.html" >Terms and condition</a></li>
+     </ul>
+</div>
+<div class="footer-links">
+    <strong>
+        Contact Us
+    </strong>
+    <ul>
+        <li><a>morningbasket@gmail.com</a></li>
+        <li>  <a>1800 454 888</a></li>
+       
+     </ul>
+</div>
+    </div>
+
+</footer>
+
+
+    
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morning Basket</title>
+    
+    <style>
+        *{
+            font-family: Comic Sans MS;
+            margin: 0px;
+            padding: 0px;
+        }
+        ul{
+            list-style: none;
+        
+        }
+        a{
+            text-decoration: solid;
+        }
+        body{
+            margin: 0px;
+            padding: 0px;
+            font-family: Comic Sans MS;
+        }
+        .navigation{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 35px;
+            max-width: 1070px;
+            width: 100%;
+            margin: auto;
+        }
+        .menu{
+            display: flex;
+
+        }
+        .menu li a {
+            padding: 3px 10px;
+            margin: 0px 3px;
+            color: darkgray;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: all ease 0.3s;
+
+        }
+        .logo{
+            font-size: 1.4rem;
+            font-weight: 600;
+            letter-spacing: 5px;
+            color: darkgrey;
+        }
+        .logo span{
+            color:black;
+        }
+        .right-nav{
+            display: grid;
+            grid-template-columns: auto;
+            grid-gap: 25px;
+
+
+        }
+
+        .like{
+            
+            color: #000000;
+        }
+        .cart{
+            background: "cart.jpg";
+            
+            color: #000000;
+            
+        }
+        .right-nav a span {
+            position: absolute;
+            top: -7px;
+            right: -7px;
+            width: 20;
+            height: 20 ;
+            display:flex ;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            color: #b4b4b4;
+            font-size: 0.6rem;
+            font-weight: 500;
+            background-color: black;
+
+
+        }
+        .menu li a:hover,
+        .menu .active {
+            color: rgb(0, 0, 0);
+            transition: all ease 0.3s;
+
+        }
+
+</style>
+</head>
+<body background="BG2.jpg">
+
+     <nav class="navigation">
+        
+        <a href="#" class="logo"> <span>Morning</span> Basket</a>
+        <ul class="menu">
+            <li><a href="#"class="active"> Home</a></li>
+            <li><a href="#">Categories</a></li>
+            <li><a href="#">Our packages </a></li>
+            <li><a href="#">Our App</a></li>
+        </ul>
+
+        <div class="right-nav"></div>
+        <a href="#" class="like">
+            <p>&hearts;<p> 
+                
+                      
+        </a>
+        <a href="#" class="cart" > <strong>Cart</strong></a> 
+</nav>
+        
+
+<align = "left"><img src = "Navratan.png" height="300" width="240"> </img></align>
+
+<br>
+<font size="5" face ="Palatino Linotype"> Haldiram's Navrattan  (10% Extra in Pack)  (200 g)</font><br>
+MRP Rs.36 <font size="2" color="grey"><s> (Rs.42) </s> &nbsp &nbsp <font size="2" color="grey">@40.9/250g </font></font><br>
+<font size= "2" color="grey"> (Inclusive of all taxes) </font> <br>
+<div color="green"> 4.4 &#9733 &nbsp 337 Ratings & 27 Reviews </div> <br>
+
+
+<button id="sub">-</button>
+	<input type="text" id="qtyBox" readonly="" value="0">
+	<button id="add">+</button>
+
+	<script type="text/javascript">
+		let addBtn = document.querySelector('#add');
+		let subBtn = document.querySelector('#sub');
+		let qty = document.querySelector('#qtyBox');
+		
+		addBtn.addEventListener('click',()=>{
+			qty.value = parseInt(qty.value) + 1;
+		});
+
+		subBtn.addEventListener('click',()=>{
+			if (qty.value <= 0) {
+				qty.value = 0;
+			}
+			else{
+				qty.value = parseInt(qty.value) - 1;
+			}
+		});
+
+
+
+
+	</script>
+ &nbsp <input type="button" onclick="alert('Added To Basket!')" value="Add to Basket!"></input> <br>
+<font size = "2" color = "grey"> Standard: Today 9:00AM - 11:00AM </font> <br>
+<br>
+<font size = "4"> Pack size </font>
+<br>
+<br>
+<div> 1KG &nbsp &nbsp &nbsp Rs.220 </s> </font> </div>  
+<div> 490g &nbsp &nbsp &nbsp Rs.90 </div>  
+<div> 42g &nbsp &nbsp &nbsp Rs.10</div> 
+<font size="5"> <b> Haldirams Namkeen - Aloo Bhujia </b> </font><br>
+
+<font size="5" >About the Product </font> <br><br>
+<font size="3" color="grey"> <p> Haldirams Navratan is a authentic namkeen. This classic snack is made with chickpea flour, potato and some spices. This is a popular Indian snack that is originated from Rajasthan. It is a great accompaniment to savoury snacks that adds texture to classic Indian snacks. This are delicious and flavourful mix snacks. It is crispy, flavourful and textured. This delightful snack can be eaten as it is. Its a healthy alternative for potato
+<br> chips.</p> </font><br>
+
+<font size="5"> Ingredients </font> <br>
+<font size="3" color="grey">Potato, Refined Palmolein Oil, Bengal Gram Flour(Besan), Potato Flakes, Potato Starch, Tapioca Starch, Tapary Beans (Moth dal) L iodised Salt, Red Chilli Powder, Black Salt. idly ,regulator (INS 330), Black Pepper,
+Clove. cardamom, Dried Ginger Powder, Dried Garlic Leaves, Nutmeg, Cinnamon & Mint Leaves.</font><br>
+
+<font size="5"> Benefits </font><br>
+<font size="3" color="grey"> 1. It is a healthy snack option for you and your kids. 2. It is made with all natural ingredients. 3. It is high in protein and is nutrition's. 4. They are crispy, crunchy and spicy. </font> <br>
+<font size="5"> Nutritional Facts </font><br>
+<font size="3" color="grey">Energy 562 kcal, Carbohydrate 46.10g, Sugar 0.25g, Total Fat 38.12 g, Saturated Fatty Acids 16.50g, Monounsaturated Fatty Acids 13.64g, Polyunsaturated Fatty Acids 3.10g, Trans Fatty Acids 0g, Protein 8.68g,<br>
+ Fibre 0.83 g, Sodium 615g, Cholesterol 0mg.</font><br>
+<font size = "5"> Other Product Info </font> <br>
+<br>
+<font size="3" color="grey"> EAN Code: 8904234400755<br>
+Country of origin: India<br>
+Manufactured & Marketed by: Kaira District Co-operative Milk Producers' Union Limited, Anand 388 001. At Food Complex Mogar, Mogar. Lic. No. - 10014021001010.<br>
+Best before 03-10-2022<br>
+For Queries/Feedback/Complaints, Contact our Customer Care Executive at: Phone: 1860 123 1000 | Address: Innovative Retail Concepts Private Limited, Ranka Junction 4th Floor, Tin Factory bus stop. KR Puram, Bangalore - 560016</font>
+
+<br> 
+<br>
+<br>
+</body>
+</html>
+
+
+
+
+
+
+
